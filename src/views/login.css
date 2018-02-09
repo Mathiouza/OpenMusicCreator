@@ -1,0 +1,107 @@
+body {
+	background-color: #7c7b79;
+}
+
+/* Titre */
+h1 {
+	color: #FFF;
+	font-weight: bold;
+	width: 430px;
+	margin: auto;
+	/*mix-blend-mode: difference;*/
+}
+
+/* Modal */
+div#modal-log {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+}
+div#modal-sign {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+}
+form#formlog {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+}
+form#formsign {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+}
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+
+
+
+
+/* Placement bouton */
+div#log {
+	display: inline-block;
+	margin: auto;
+	margin-top: 35%;
+	margin-left: 41%;
+	margin-right: 3%;
+}
+div#signin {
+	display: inline-block;
+	margin: auto;
+}
+
+
+/* Style bouton */
+button#btn1 {
+	cursor: pointer;
+	text-transform: capitalize;
+	width: 85px;
+	height: 85px;
+	background: #FFF;
+	font:bold 13px Arial;
+	border-radius: 50%;
+	border: none;
+	color: #555;
+}
+button#btn1:hover {
+	cursor: pointer;
+	text-transform: capitalize;
+	width: 85px;
+	height: 85px;
+	background: #c1bbb0;
+	font:bold 13px Arial;
+	border-radius: 50%;
+	border: none;
+	color: #fff;
+}

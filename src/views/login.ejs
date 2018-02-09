@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+		<link rel="stylesheet" href="login.css" />
+        <title>Login - OpenMusicCreator</title>
+    </head>
+    <body>
+
+    	
+
+
+
+
+		<h1>Open Music Creator</h1>
+
+		<div id="log"><button id="btn1" onclick="afficher(form1);">Login</button></div>
+		<div id="signin"><button id="btn1" onclick="afficher(form2);">Sign in</button></div>
+
+		<div id="modal-log">
+			<form id="formlog" method="post">
+				<span class="close" onclick="fermer(form1);">&times;</span>
+				<p>
+				<div id="userlabel">Username :</div>
+				<input type="username" name="username" id="username" placeholder="Username" required>
+				<div id="passlabel">Password :</div>
+				<input type="password" name="password" id="password" placeholder="Password" required>
+				</p>
+				<button>Submit</button>
+			</form>
+		</div>
+
+		<div id="modal-sign">
+			<form id="formsign" method="post">
+				<span class="close" onclick="fermer(form2);">&times;</span>
+				<p>
+				<div id="userlabel">Username :</div>
+				<input type="username" name="username" id="username" placeholder="Username" required>
+				<div id="passlabel">Password :</div>
+				<input type="password" name="password" id="password" placeholder="Password" required>
+				<div id="passlabelagain">Password again :</div>
+				<input type="password" name="passwordagain" id="passwordagain" placeholder="Again" required>
+				</p>
+				<button>Submit</button>
+			</form>
+		</div>
+
+
+		<script type="text/javascript">
+    		function afficher(form) {
+    			if(form.style.display == "none") {
+    				form.style.display = "block";
+    			}
+    			else {
+    				form.style.display = "none";
+    			}
+    		}
+    		
+    		function fermer(form) {
+    			form.style.display = "none";
+    		}
+
+    		window.onclick = function(event) {
+    			if(event.target == form1) {
+    				form1.style.display = "none";
+    			}
+    			if(event.target == form2) {
+    				form2.style.display = "none";
+    			}
+    		};
+
+    		var form1 = document.getElementById("modal-log");
+    		var form2 = document.getElementById("modal-sign");
+
+    		form1.style.display = "none";
+    		form2.style.display = "none";
+    	</script>
+
+    </body>
+</html>
