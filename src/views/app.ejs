@@ -159,6 +159,14 @@
 		</div>
 		
 		<script>
+			var mouseDown = 0;
+			document.body.onmousedown = function() { 
+			  ++mouseDown;
+			}
+			document.body.onmouseup = function() {
+			  --mouseDown;
+			}
+		
 			var el = document.querySelectorAll('img');
 			for (var i = 0 ; i < el.length ; i++) {
 				el[i].addEventListener('mousedown', function(e){
@@ -175,6 +183,7 @@
 					if(e.currentTarget.parentNode.parentNode.getAttribute('id') == 'instru2') value = '40';
 					else if(e.currentTarget.parentNode.parentNode.getAttribute('id') == 'instru3') value = '80';
 					e.currentTarget.setAttribute('style', 'filter: sepia() saturate(1000%) hue-rotate('+value+'deg)');
+					if(mouseDown) e.currentTarget.setAttribute('style', 'filter: sepia() saturate(20%) hue-rotate('+value+'deg)');
 				});
 				instru1touche[i].addEventListener('mousedown', function(e) {
 					var value = '10';
