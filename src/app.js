@@ -3,8 +3,8 @@ var ejs = require('ejs');
 
 var app = express();
 
-//Gère le dossier img
-app.use(express.static(__dirname + '/img'));
+app.use(express.static(__dirname + '/views/img'));
+app.use(express.static(__dirname + '/views'));
 
 app.get('/editor', function(req, res) {
 	res.render('app.ejs', {});

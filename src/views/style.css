@@ -1,3 +1,89 @@
 body {
-	background-color:  #212f3d;
+	background-color:  #000000;
+	color: #FFFFFF;
+	font-family: Gill Sans MT, Arial;
+	font-size: 1.8vw;
+}
+
+h1 {
+	text-align : center;
+	height: 20%;
+}
+
+.divInstru {
+	overflow:  visible;
+	float : left;
+	width: 33.333%;
+}
+
+#instru1 .touche, #instru1 h1 {
+    filter: sepia() saturate(10000%) hue-rotate(10deg)
+}
+
+#instru2 .touche, #instru2 h1 {
+    filter: sepia() saturate(10000%) hue-rotate(40deg)
+}
+
+#instru3 .touche, #instru3 h1 {
+    filter: sepia() saturate(10000%) hue-rotate(80deg)
+}
+
+#instru1 .touche:hover {
+	filter: sepia() saturate(1000%) hue-rotate(10deg)
+}
+
+#instru2 .touche:hover {
+	filter: sepia() saturate(1000%) hue-rotate(40deg)
+}
+
+#instru3 .touche:hover {
+	filter: sepia() saturate(1000%) hue-rotate(80deg)
+}
+
+#instru1 .touche:active {
+	filter: sepia() saturate(20%) hue-rotate(10deg)
+}
+
+#instru2 .touche:active {
+	filter: sepia() saturate(20%) hue-rotate(40deg)
+}
+
+#instru3 .touche:active {
+	filter: sepia() saturate(20%) hue-rotate(80deg)
+}
+
+.touche {
+	float : left;
+	height: 15.6%;
+	width: 15.6%;
+	margin-left: 0.5%;
+	margin-right: 0.5%;
+}
+
+.lineP {
+	float: left;
+	width: 100%;
+	height: 16%;
+	margin-bottom: -4%;
+}
+
+.lineI {
+	float: left;
+	width: 100%;
+	height: 16%;
+	margin-left: 8.3%;
+	margin-bottom: -4%;
+}
+
+#instru2 .lineI {
+	margin-left: -8.3%;
+	width: 116.6%;
+}
+
+#instru2 .lineI .touche {
+	float : left;
+	height: 15.6%;
+	width: 13.365%;
+	margin-left: 0.4288%;
+	margin-right: 0.4288%;
 }
