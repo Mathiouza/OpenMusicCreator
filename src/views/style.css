@@ -28,30 +28,6 @@ h1 {
     filter: sepia() saturate(10000%) hue-rotate(80deg)
 }
 
-#instru1 .touche:hover {
-	filter: sepia() saturate(1000%) hue-rotate(10deg)
-}
-
-#instru2 .touche:hover {
-	filter: sepia() saturate(1000%) hue-rotate(40deg)
-}
-
-#instru3 .touche:hover {
-	filter: sepia() saturate(1000%) hue-rotate(80deg)
-}
-
-#instru1 .touche:active {
-	filter: sepia() saturate(20%) hue-rotate(10deg)
-}
-
-#instru2 .touche:active {
-	filter: sepia() saturate(20%) hue-rotate(40deg)
-}
-
-#instru3 .touche:active {
-	filter: sepia() saturate(20%) hue-rotate(80deg)
-}
-
 .touche {
 	float : left;
 	height: 15.6%;

@@ -157,5 +157,44 @@
 				<img src="touche.png" class="touche" />
 			</div>
 		</div>
+		
+		<script>
+			var el = document.querySelectorAll('img');
+			for (var i = 0 ; i < el.length ; i++) {
+				el[i].addEventListener('mousedown', function(e){
+					e.preventDefault();
+				}, false);
+				el[i].addEventListener('mousemove', function(e){
+					e.preventDefault();
+				}, false);
+			}
+			var instru1touche = document.querySelectorAll('.touche');
+			for(var i = 0 ; i < instru1touche.length ; i++) {
+				instru1touche[i].addEventListener('mouseover', function(e) {
+					var value = '10';
+					if(e.currentTarget.parentNode.parentNode.getAttribute('id') == 'instru2') value = '40';
+					else if(e.currentTarget.parentNode.parentNode.getAttribute('id') == 'instru3') value = '80';
+					e.currentTarget.setAttribute('style', 'filter: sepia() saturate(1000%) hue-rotate('+value+'deg)');
+				});
+				instru1touche[i].addEventListener('mousedown', function(e) {
+					var value = '10';
+					if(e.currentTarget.parentNode.parentNode.getAttribute('id') == 'instru2') value = '40';
+					else if(e.currentTarget.parentNode.parentNode.getAttribute('id') == 'instru3') value = '80';
+					e.currentTarget.setAttribute('style', 'filter: sepia() saturate(20%) hue-rotate('+value+'deg)');
+				});
+				instru1touche[i].addEventListener('mouseup', function(e) {
+					var value = '10';
+					if(e.currentTarget.parentNode.parentNode.getAttribute('id') == 'instru2') value = '40';
+					else if(e.currentTarget.parentNode.parentNode.getAttribute('id') == 'instru3') value = '80';
+					e.currentTarget.setAttribute('style', 'filter: sepia() saturate(1000%) hue-rotate('+value+'deg)');
+				});
+				instru1touche[i].addEventListener('mouseout', function(e) {
+					var value = '10';
+					if(e.currentTarget.parentNode.parentNode.getAttribute('id') == 'instru2') value = '40';
+					else if(e.currentTarget.parentNode.parentNode.getAttribute('id') == 'instru3') value = '80';
+					e.currentTarget.setAttribute('style', 'filter: sepia() saturate(100000%) hue-rotate('+value+'deg)');
+				});
+			}
+		</script>
     </body>
 </html>
