@@ -92,6 +92,25 @@ h1 {
 	/*mix-blend-mode: difference;*/
 }
 
+/* Animation pour modal */ 
+@keyframes animForm1 {
+	from {
+		transform: translateY(-150%);
+	}
+	to {
+		transform: translateY(0px);
+	}
+}
+
+@keyframes animForm2 {
+	from {
+		transform: translateX(150%);
+	}
+	to {
+		transform: translateX(0px);
+	}
+}
+
 /* Modal */
 div#modal-log {
 	display: none;
@@ -101,18 +120,11 @@ div#modal-log {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	overflow: auto;
+	overflow: hidden;
 	background-color: rgb(0, 0, 0);
-	background-color: rgba(0, 0, 0, 0.4);
-/*
-  	overflow:auto;
-  	-webkit-transform:translateY(-300%);
-  	transform:translateY(-300%);
-  	text-align:center;
-  	position:relative;
-  	-webkit-transition: all 900ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  	transition: all 900ms cubic-bezier(0.68, -0.55, 0.265, 1.55);*/
+	background-color: rgba(0, 0, 0, 0.4);	
 }
+
 div#modal-sign {
 	display: none;
 	position: fixed;
@@ -121,7 +133,7 @@ div#modal-sign {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	overflow: auto;
+	overflow: hidden;
 	background-color: rgb(0, 0, 0);
 	background-color: rgba(0, 0, 0, 0.4);
 }
@@ -132,6 +144,8 @@ form#formlog {
 	border: 1px solid #888;
 	width: 30%;
 	border-radius: 6px;
+
+	animation: animForm1 0.666s linear;
 }
 form#formsign {
 	background-color: #fefefe;
@@ -140,6 +154,8 @@ form#formsign {
 	border: 1px solid #888;
 	width: 30%;
 	border-radius: 6px;
+
+	animation: animForm2 0.666s linear;
 }
 .close {
 	color: #aaa;
