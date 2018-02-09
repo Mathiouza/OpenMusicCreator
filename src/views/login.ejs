@@ -6,71 +6,78 @@
         <title>Login - OpenMusicCreator</title>
     </head>
     <body>
+    	<div id="corps">
+	    	<!-- Background -->
+	    	<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+			<div id='stars'></div>
+			<div id='stars2'></div>
+			<div id='stars3'></div>
 
-    	<!-- Background -->
-    	<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-		<div id='stars'></div>
-		<div id='stars2'></div>
-		<div id='stars3'></div>
-
-
-
-
-		<h1>Open Music Creator</h1>
-
-		<div id="log"><button id="btn1" onclick="afficher(form1);">Login</button></div>
-		<div id="signin"><button id="btn1" onclick="afficher(form2);">Sign in</button></div>
-
-		<div id="modal-log">
-			<form id="formlog" method="post" action="/login">
-				<span class="close" onclick="fermer(form1);">&times;</span>
-				<p>
-				<div id="userlabel">Username :</div>
-				<input type="username" name="username" id="username" placeholder="Username" required>
-				<div id="passlabel">Password :</div>
-				<input type="password" name="password" id="password" placeholder="Password" required>
-				</p>
-				<button>Submit</button>
-			</form>
+			<h1>Open Music Creator</h1>
+				<button id="btn1" onclick="afficher(form1);"><div id="textlog">Login</div></button>
+				<!-- <div id="signin"><button id="btn1" onclick="afficher(form2);">Sign in</button></div> -->
 		</div>
+			<div id="modal-log">
+				<form id="formlog" method="post" action="/login">
+					<span class="close" onclick="fermer(form1);">&times;</span>
+					<p>
+					<div id="userlabel">Username :</div>
+					<input type="username" name="username" id="username" placeholder="Username" required>
+					<div id="passlabel">Password :</div>
+					<input type="password" name="password" id="password" placeholder="Password" required>
+					</p>
+					<button>Submit</button>
+					<p><a onclick="afficher(form2, form1);">Sign in</a></p>
+				</form>
+			</div>
 
-		<div id="modal-sign">
-			<form id="formsign" method="post" action="/signin">
-				<span class="close" onclick="fermer(form2);">&times;</span>
-				<p>
-				<div id="userlabel">Username :</div>
-				<input type="username" name="usernamesign" id="usernamesign" placeholder="Username" required>
-				<div id="passlabel">Password :</div>
-				<input type="password" name="passwordsign" id="passwordsign" placeholder="Password" required>
-				<div id="passlabelagain">Password again :</div>
-				<input type="password" name="passwordagain" id="passwordagain" placeholder="Again" required>
-				<div id="err-pass" style="color: rgb(255, 0, 0); display: none;">Password error</div>
-				</p>
-				<button>Submit</button>
-			</form>
+			<div id="modal-sign">
+				<form id="formsign" method="post" action="/signin">
+					<span class="close" onclick="fermer(form2);">&times;</span>
+					<p>
+					<div id="userlabel">Username :</div>
+					<input type="username" name="usernamesign" id="usernamesign" placeholder="Username" required>
+					<div id="passlabel">Password :</div>
+					<input type="password" name="passwordsign" id="passwordsign" placeholder="Password" required>
+					<div id="passlabelagain">Password again :</div>
+					<input type="password" name="passwordagain" id="passwordagain" placeholder="Again" required>
+					<div id="err-pass" style="color: rgb(255, 0, 0); display: none;">Password error</div>
+					</p>
+					<button>Submit</button>
+					<p><a onclick="afficher(form1, form2);">I already have an account</a></p>
+				</form>
+			</div>
 		</div>
 
 
 		<script type="text/javascript">
-    		function afficher(form) {
+			var elmt = document.getElementById("corps");
+    		function afficher(form, form2) {
     			if(form.style.display == "none") {
     				form.style.display = "block";
+    				elmt.setAttribute("class", "blur");
     			}
     			else {
     				form.style.display = "none";
+    			}
+    			if(form2.style.display == "block") {
+    				form2.style.display = "none";
     			}
     		}
     		
     		function fermer(form) {
     			form.style.display = "none";
+    			elmt.setAttribute("class", null);
     		}
 
     		window.onclick = function(event) {
     			if(event.target == form1) {
     				form1.style.display = "none";
+    				elmt.setAttribute("class", null);
     			}
     			if(event.target == form2) {
     				form2.style.display = "none";
+    				elmt.setAttribute("class", null);
     			}
     		};
 
