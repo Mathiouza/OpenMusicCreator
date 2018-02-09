@@ -18,7 +18,7 @@
 		<div id="signin"><button id="btn1" onclick="afficher(form2);">Sign in</button></div>
 
 		<div id="modal-log">
-			<form id="formlog" method="post">
+			<form id="formlog" method="post" action="/login">
 				<span class="close" onclick="fermer(form1);">&times;</span>
 				<p>
 				<div id="userlabel">Username :</div>
@@ -31,15 +31,16 @@
 		</div>
 
 		<div id="modal-sign">
-			<form id="formsign" method="post">
+			<form id="formsign" method="post" action="/signin">
 				<span class="close" onclick="fermer(form2);">&times;</span>
 				<p>
 				<div id="userlabel">Username :</div>
-				<input type="username" name="username" id="username" placeholder="Username" required>
+				<input type="username" name="usernamesign" id="usernamesign" placeholder="Username" required>
 				<div id="passlabel">Password :</div>
-				<input type="password" name="password" id="password" placeholder="Password" required>
+				<input type="password" name="passwordsign" id="passwordsign" placeholder="Password" required>
 				<div id="passlabelagain">Password again :</div>
 				<input type="password" name="passwordagain" id="passwordagain" placeholder="Again" required>
+				<div id="err-pass" style="color: rgb(255, 0, 0); display: none;">Password error</div>
 				</p>
 				<button>Submit</button>
 			</form>
@@ -74,6 +75,22 @@
 
     		form1.style.display = "none";
     		form2.style.display = "none";
+
+    		//Verif pass identiques
+    		setInterval(function() {
+				var p1 = document.getElementById("passwordsign");
+    			var p2 = document.getElementById("passwordagain");
+
+    			var epass = document.getElementById("err-pass");
+
+	    		if(p2.value != "" && p1.value != p2.value) {
+	    			epass.style.display = "";
+	    		}
+	    		else {
+	    			epass.style.display = "none";
+	    		}
+    		}, 1000);
+
     	</script>
 
     </body>
