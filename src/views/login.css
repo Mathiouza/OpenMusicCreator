@@ -86,13 +86,12 @@ body {
 
 /* Titre */
 h1 {
-	display: block;
+	display: inline-block;
 	position: absolute;
 	top: 5%;
 	left: 50%;
   font: bold 70px arial;
 	transform: translate(-50%, -50%);
-
 	color: #FFF;
 	font-weight: bold;
 	
@@ -219,10 +218,11 @@ div#textlog {
 button#btn1 {
   /* General */
   border: 3px solid #fff;
+  border-radius: 2px;
   background: none;
   color: #fff;
   cursor: pointer;
-  padding: 25px 80px;
+  padding: 25px 60px;
   display: inline-block;
   margin: 15px 30px;
   text-transform: uppercase;
@@ -233,6 +233,7 @@ button#btn1 {
   transition: all 0.3s;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
+  margin-top: 3%;
 
   /* Spec */
   border: 3px solid #fff;
@@ -271,4 +272,45 @@ a {
 a:hover {
 	cursor: pointer;
 	color: rgb(0, 0, 255);
+}
+
+/* Style image fleche */ /*
+div#fleche1 {
+  margin-left: 8%;
+}
+
+div#text-fleche {
+  color: rgba(255, 255, 255, 1);
+  font: italic bold 25px arial;
+  margin-left: 8%;
+  margin-top: 0.5%;
+  /*border: 3px solid rgba(180, 180, 180, 1);*/ /*
+  background: none;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 1px;
+}
+*/
+/* Couleur lettre OMC */
+
+/* A revoir */
+.letter-color {
+  display: inline-block;
+  color: rgba(220, 0, 0, 1);
+  background-color: #fff;
+  margin-right: 5px;
+  height: 100%;
+}
+
+/* Player */
+
+
+/* Footer */
+div#footer {
+  font: italic 15px arial;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 2%;
 }
