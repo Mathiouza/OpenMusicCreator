@@ -8,6 +8,8 @@ body {
 h1 {
 	text-align : center;
 	height: 20%;
+	margin-bottom: 2%;
+	margin-top: 2%;
 }
 
 .divInstru {
@@ -17,15 +19,27 @@ h1 {
 }
 
 #instru1 .touche, #instru1 h1 {
-    filter: sepia() saturate(10000%) hue-rotate(10deg)
+    filter: sepia() saturate(10000%) hue-rotate(0deg)
+}
+
+#instru1 .main {
+	filter: sepia() saturate(10000%) hue-rotate(-60deg)
 }
 
 #instru2 .touche, #instru2 h1 {
-    filter: sepia() saturate(10000%) hue-rotate(40deg)
+    filter: sepia() saturate(10000%) hue-rotate(120deg)
+}
+
+#instru2 .main {
+	filter: sepia() saturate(10000%) hue-rotate(60deg)
 }
 
 #instru3 .touche, #instru3 h1 {
-    filter: sepia() saturate(10000%) hue-rotate(80deg)
+    filter: sepia() saturate(10000%) hue-rotate(240deg)
+}
+
+#instru3 .main {
+	filter: sepia() saturate(10000%) hue-rotate(180deg)
 }
 
 .touche {
@@ -62,4 +76,9 @@ h1 {
 	width: 13.365%;
 	margin-left: 0.4288%;
 	margin-right: 0.4288%;
+}
+
+.label {
+	position: absolute;
+	margin: 1.5% 0 0 -3.4%;
 }
