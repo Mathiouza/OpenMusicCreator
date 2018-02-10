@@ -160,52 +160,60 @@
 		
 		<script src="wad.js"></script>
 		<script>
-			var funcMOv = function(e) {
+			var funcMOv = function(object) {
 				var value = 0, instru = 'sine';
-				if(e.currentTarget.parentNode.parentNode.getAttribute('id') == 'instru2') { value = 120; instru = 'sawtooth'; }
-				else if(e.currentTarget.parentNode.parentNode.getAttribute('id') == 'instru3') { value = 240; instru = 'triangle'; }
-				if(e.currentTarget.getAttribute('class') == 'touche main') value -= 60;
-				e.currentTarget.setAttribute('style', 'filter: sepia() saturate(1000%) hue-rotate('+value+'deg)');
+				if(object.parentNode.parentNode.getAttribute('id') == 'instru2') { value = 120; instru = 'sawtooth'; }
+				else if(object.parentNode.parentNode.getAttribute('id') == 'instru3') { value = 240; instru = 'triangle'; }
+				if(object.getAttribute('class') == 'touche main') value -= 60;
+				object.setAttribute('style', 'filter: sepia() saturate(1000%) hue-rotate('+value+'deg)');
 				if(mouseDown) {
-					e.currentTarget.setAttribute('style', 'filter: sepia() saturate(20%) hue-rotate('+value+'deg)');
+					object.setAttribute('style', 'filter: sepia() saturate(20%) hue-rotate('+value+'deg)');
 					
-					var str = e.currentTarget.getAttribute('tone')+(parseInt(e.currentTarget.getAttribute('oct'))+octave);
+					var str = object.getAttribute('tone')+(parseInt(object.getAttribute('oct'))+octave);
 					playSomething(instru, str);
 				}
 			}
 		
-			var funcMD = function(e) {
+			var funcMD = function(object) {
 				var value = 0, instru = 'sine';
-				if(e.currentTarget.parentNode.parentNode.getAttribute('id') == 'instru2') { value = 120; instru = 'sawtooth'; }
-				else if(e.currentTarget.parentNode.parentNode.getAttribute('id') == 'instru3') { value = 240; instru = 'triangle'; }
-				if(e.currentTarget.getAttribute('class') == 'touche main') value -= 60;
-				e.currentTarget.setAttribute('style', 'filter: sepia() saturate(20%) hue-rotate('+value+'deg)');
+				if(object.parentNode.parentNode.getAttribute('id') == 'instru2') { value = 120; instru = 'sawtooth'; }
+				else if(object.parentNode.parentNode.getAttribute('id') == 'instru3') { value = 240; instru = 'triangle'; }
+				if(object.getAttribute('class') == 'touche main') value -= 60;
+				object.setAttribute('style', 'filter: sepia() saturate(20%) hue-rotate('+value+'deg)');
 				
-				var str = e.currentTarget.getAttribute('tone')+(parseInt(e.currentTarget.getAttribute('oct'))+octave);
+				var str = object.getAttribute('tone')+(parseInt(object.getAttribute('oct'))+octave);
 				playSomething(instru, str);
 			}
 		
-			var funcMU = function(e) {
+			var funcMU = function(object) {
 				var value = 0, instru = 'sine';
-				if(e.currentTarget.parentNode.parentNode.getAttribute('id') == 'instru2') { value = 120; instru = 'sawtooth'; }
-				else if(e.currentTarget.parentNode.parentNode.getAttribute('id') == 'instru3') { value = 240; instru = 'triangle'; }
-				if(e.currentTarget.getAttribute('class') == 'touche main') value -= 60;
-				e.currentTarget.setAttribute('style', 'filter: sepia() saturate(1000%) hue-rotate('+value+'deg)');
+				if(object.parentNode.parentNode.getAttribute('id') == 'instru2') { value = 120; instru = 'sawtooth'; }
+				else if(object.parentNode.parentNode.getAttribute('id') == 'instru3') { value = 240; instru = 'triangle'; }
+				if(object.getAttribute('class') == 'touche main') value -= 60;
+				object.setAttribute('style', 'filter: sepia() saturate(1000%) hue-rotate('+value+'deg)');
 				
-				var str = e.currentTarget.getAttribute('tone')+(parseInt(e.currentTarget.getAttribute('oct'))+octave);
+				var str = object.getAttribute('tone')+(parseInt(object.getAttribute('oct'))+octave);
 				stopPlaying(instru, str);
 			}
 		
-			var funcMOu = function(e) {
+			var funcMOu = function(object) {
 				var value = 0, instru = 'sine';
-				if(e.currentTarget.parentNode.parentNode.getAttribute('id') == 'instru2') { value = 120; instru = 'sawtooth'; }
-				else if(e.currentTarget.parentNode.parentNode.getAttribute('id') == 'instru3') { value = 240; instru = 'triangle'; }
-				if(e.currentTarget.getAttribute('class') == 'touche main') value -= 60;
-				e.currentTarget.setAttribute('style', 'filter: sepia() saturate(100000%) hue-rotate('+value+'deg)');
+				if(object.parentNode.parentNode.getAttribute('id') == 'instru2') { value = 120; instru = 'sawtooth'; }
+				else if(object.parentNode.parentNode.getAttribute('id') == 'instru3') { value = 240; instru = 'triangle'; }
+				if(object.getAttribute('class') == 'touche main') value -= 60;
+				object.setAttribute('style', 'filter: sepia() saturate(100000%) hue-rotate('+value+'deg)');
 				if(mouseDown) {
-					var str = e.currentTarget.getAttribute('tone')+(parseInt(e.currentTarget.getAttribute('oct'))+octave);
+					var str = object.getAttribute('tone')+(parseInt(object.getAttribute('oct'))+octave);
 					stopPlaying(instru, str);
 				}
+			}
+		
+		
+			document.onselectstart = function() {return false};
+			if(window.sidebar)
+			{
+				document.onmousedown = function() {return false};
+				document.onclick = function() {return true};
 			}
 		
 		
@@ -284,10 +292,33 @@
 			}
 			var instrus = document.querySelectorAll('.touche');
 			for(var i = 0 ; i < instrus.length ; i++) {
-				instrus[i].addEventListener('mouseover', funcMOv);
-				instrus[i].addEventListener('mousedown', funcMD);
-				instrus[i].addEventListener('mouseup', funcMU);
-				instrus[i].addEventListener('mouseout', funcMOu);
+				instrus[i].addEventListener('mouseover', function(e) {
+					funcMOv(e.currentTarget);
+				});
+				instrus[i].addEventListener('mousedown', function(e) {
+					funcMD(e.currentTarget);
+				});
+				instrus[i].addEventListener('mouseup', function(e) {
+					funcMU(e.currentTarget);
+				});
+				instrus[i].addEventListener('mouseout', function(e) {
+					funcMOu(e.currentTarget);
+				});
+			}
+			var labels = document.querySelectorAll('.label');
+			for(var i = 0 ; i < instrus.length ; i++) {
+				labels[i].addEventListener('mouseover', function(e) {
+					funcMOv(e.currentTarget.previousSibling);
+				});
+				labels[i].addEventListener('mousedown', function(e) {
+					funcMD(e.currentTarget.previousSibling);
+				});
+				labels[i].addEventListener('mouseup', function(e) {
+					funcMU(e.currentTarget.previousSibling);
+				});
+				labels[i].addEventListener('mouseout', function(e) {
+					funcMOu(e.currentTarget.previousSibling);
+				});
 			}
 		</script>
     </body>
