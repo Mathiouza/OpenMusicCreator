@@ -3,6 +3,7 @@ body {
 	color: #FFFFFF;
 	font-family: Gill Sans MT, Arial;
 	font-size: 1.8vw;
+	overflow: hidden;
 }
 
 h1 {
@@ -19,27 +20,39 @@ h1 {
 }
 
 #instru1 .touche, #instru1 h1 {
-    filter: sepia() saturate(10000%) hue-rotate(0deg)
+    filter: sepia() saturate(10000%) hue-rotate(0deg);
+    -webkit-filter: sepia() saturate(10000%) hue-rotate(0deg);
+    -moz-filter: sepia() saturate(10000%) hue-rotate(0deg);
 }
 
 #instru1 .main {
-	filter: sepia() saturate(10000%) hue-rotate(-60deg)
+	filter: sepia() saturate(10000%) hue-rotate(-60deg);
+	-webkit-filter: sepia() saturate(10000%) hue-rotate(-60deg);
+	-moz-filter: sepia() saturate(10000%) hue-rotate(-60deg);
 }
 
 #instru2 .touche, #instru2 h1 {
-    filter: sepia() saturate(10000%) hue-rotate(120deg)
+    filter: sepia() saturate(10000%) hue-rotate(120deg);
+    -webkit-filter: sepia() saturate(10000%) hue-rotate(120deg);
+    -moz-filter: sepia() saturate(10000%) hue-rotate(120deg);
 }
 
 #instru2 .main {
-	filter: sepia() saturate(10000%) hue-rotate(60deg)
+	filter: sepia() saturate(10000%) hue-rotate(60deg);
+	-webkit-filter: sepia() saturate(10000%) hue-rotate(60deg);
+	-moz-filter: sepia() saturate(10000%) hue-rotate(60deg);
 }
 
 #instru3 .touche, #instru3 h1 {
-    filter: sepia() saturate(10000%) hue-rotate(240deg)
+    filter: sepia() saturate(10000%) hue-rotate(240deg);
+    -webkit-filter: sepia() saturate(10000%) hue-rotate(240deg);
+    -moz-filter: sepia() saturate(10000%) hue-rotate(240deg);
 }
 
 #instru3 .main {
-	filter: sepia() saturate(10000%) hue-rotate(180deg)
+	filter: sepia() saturate(10000%) hue-rotate(180deg);
+	-webkit-filter: sepia() saturate(10000%) hue-rotate(180deg);
+	-moz-filter: sepia() saturate(10000%) hue-rotate(180deg);
 }
 
 .touche {
