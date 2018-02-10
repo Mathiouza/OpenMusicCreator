@@ -10,6 +10,7 @@ app.use(express.static(__dirname + '/views/img'));
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/views/sounds'));
 app.use(express.static(__dirname + '/libs'));
+app.use(express.static(__dirname + '/views/music'));
 
 //Récupere la method POST
 app.use(bodyParser.urlencoded({extended: false}));
