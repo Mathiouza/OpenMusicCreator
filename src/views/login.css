@@ -302,9 +302,6 @@ div#text-fleche {
   height: 100%;
 }
 
-/* Player */
-
-
 /* Footer */
 div#footer {
   font: italic 15px arial;
@@ -313,4 +310,18 @@ div#footer {
   bottom: 0;
   right: 0;
   margin-right: 2%;
+}
+
+
+/* Audio Player */
+
+audio {
+  margin:0 15px 0 14px;
+  width:670px;
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }

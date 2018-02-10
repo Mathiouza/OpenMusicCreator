@@ -18,7 +18,7 @@
 				<!-- <div id="signin"><button id="btn1" onclick="afficher(form2);">Sign in</button></div> -->
 
                 <div id="player">
-                    <audio src="music/test.mp3" controls></audio>
+                    <audio preload="auto" src="music/test.mp3" id="audio" controls >Your browser does not support HTML5 Audio!</audio>
                 </div>
 
 		</div>
@@ -148,16 +148,10 @@
 
     		}
 
-    		function dispReste() {
-    			var corps = document.getElementById("corps");
-    			if(corps.style.display = "") {
-    				corps.style.display = "none";
-    			}
-    			else {
-    				corps.style.display = "";
-    			}
-    		}
+    		/* Gère le player a partir d'ici */
+            var btnplay = document.getElementById("btn-play");
 
+           
     	</script>
 
     </body>
