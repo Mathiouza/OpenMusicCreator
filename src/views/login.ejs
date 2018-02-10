@@ -26,7 +26,7 @@
 						<div id="passlabel">Password :</div>
 						<input type="password" name="password" id="password" placeholder="Password" required>
 						</p>
-						<button>Submit</button>
+						<button id="submit">Submit</button>
 						<p><a onclick="afficher(form2, form1);">Sign in</a></p>
 					
 				</form>
@@ -44,7 +44,7 @@
 					<input type="password" name="passwordagain" id="passwordagain" placeholder="Again" required>
 					<div id="err-pass" style="color: rgb(255, 0, 0); display: none;">Password error</div>
 					</p>
-					<button>Submit</button>
+					<button id="submit">Submit</button>
 					<p><a onclick="afficher(form1, form2);">I already have an account</a></p>
 				</form>
 			</div>
@@ -86,6 +86,17 @@
     				toggleBackground(0);
     			}
     		};
+
+            var btn = document.getElementById("btn1");
+
+            btn1.addEventListener("mouseover", function(event) {
+                var textlog = document.getElementById("textlog");
+                textlog.style.color = "#6E6E6E";
+            });
+            btn1.addEventListener("mouseout", function(event) {
+                var textlog = document.getElementById("textlog");
+                textlog.style.color = "#fff";
+            });
 
     		var form1 = document.getElementById("modal-log");
     		var form2 = document.getElementById("modal-sign");
